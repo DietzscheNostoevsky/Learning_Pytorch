@@ -1,35 +1,35 @@
-#Imports
-import os 
-import zipfile 
+# Imports
+import os
+import zipfile
 from pathlib import Path
-import requests 
+import requests
 
 
 # Mount the GDrive
 from google.colab import drive
 drive.mount('/content/drive')
 
-data_path = Path("data/") # The trailing forward slash (/) in the string 
-                          # is used to indicate that it represents a 
-                          # directory rather than a specific file. 
-                          # It's a common convention to include the trailing slash 
-                          # in directory paths to differentiate them from file paths.
+data_path = Path("data/")  # The trailing forward slash (/) in the string
+# is used to indicate that it represents a
+# directory rather than a specific file.
+# It's a common convention to include the trailing slash
+# in directory paths to differentiate them from file paths.
 
-image_path = data_path / "pizza_steak_sushi"
+image_path_full = data_path / "pizza_steak_sushi_full"
 
-if image_path.is_dir():
-    print(f"{image_path} directory exists.")
+if image_path_full.is_dir():
+    print(f"{image_path_full} directory exists.")
 else:
-    print(f"Did not find {image_path} directory, creating one...")
-    image_path.mkdir(parents=True, exist_ok=True)
+    print(f"Did not find {image_path_full} directory, creating one...")
+    image_path_full.mkdir(parents=True, exist_ok=True)
 zip_data = "/content/drive/Othercomputers/My MacBook Air/GitHub/-Machine_Learning/Learning_Pytorch/pizza_steak_sushi_100_percent.zip"
 
 with zipfile.ZipFile(zip_data, "r") as zip_ref:
-        print("Unzipping pizza, steak, sushi data...") 
-        zip_ref.extractall(image_path)
+    print("Unzipping pizza, steak, sushi data...")
+    zip_ref.extractall(image_path_full)
 
 # Setup Dirs
-train_dir = image_path / "train"
-test_dir = image_path / "test"
+train_dir_full = image_path_full / "train"
+test_dir_full = image_path_full / "test"
 
-walk_through_dir(image_path)
+# walk_through_dir(image_path)
