@@ -52,3 +52,6 @@ def plot_decision_boundary(model: torch.nn.Module, X: torch.Tensor, y: torch.Ten
     # Setup predictoin boundaries and grid
     x_min, x_max = X[:, 0].min() - 0.1, X[:, 0].max() + 0.1
     y_min, Y_max = X[:, 1].min() - 0.1
+
+
+# This is a test in dual monitor setup
