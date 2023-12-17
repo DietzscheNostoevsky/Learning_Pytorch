@@ -51,11 +51,10 @@ def plot_decision_boundary(model: torch.nn.Module, X: torch.Tensor, y: torch.Ten
 
     # Setup predictoin boundaries and grid
     x_min, x_max = X[:, 0].min() - 0.1, X[:, 0].max() + 0.1
-    y_min, Y_max = X[:, 1].min() - 0.1, X[:, 1].max() + 0.1
+    y_min, y_max = X[:, 1].min() - 0.1, X[:, 1].max() + 0.1
     xx, yy = np.meshgrid(np.linspace(x_min, x_max, 101), np.linspace(y_min, Y_max, 101))
 
     # Make features
-
     X_to_pred_on = torch.from_numpy(np.column_stack((xx.ravel(), yy.ravel()))).float()
 
     # Make predictions
@@ -65,6 +64,24 @@ def plot_decision_boundary(model: torch.nn.Module, X: torch.Tensor, y: torch.Ten
         y_logits = model(X_to_pred_on)
 
     # Test for multi-class or binary and adjusts logits to prediction labels
+    if 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # This is a test in dual monitor setup
