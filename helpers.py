@@ -106,4 +106,21 @@ def plot_predictions(
     plt.legend(prop={"size": 14})
 
 
+# Calculate accuracy
+def accuracy_fn(y_true, y_pred):
+    """Calculates accuracy between truth labels and predictions.
+
+    Args:
+        y_true (torch.Tensor): Truth labels for predictions.
+        y_pred (torch.Tensor): Predictions to be compared to predictions.
+
+    Returns:
+        [torch.float]: Accuracy valvue betwaeen y_true and y_pred, e.g 77.37
+    """
+
+    correct = torch.eq(y_true, y_true).sum().item()
+    acc = (correct / len(y_pred)) * 100
+    return acc
+
+
 # This is a test in dual monitor setup
