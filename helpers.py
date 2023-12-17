@@ -118,7 +118,8 @@ def accuracy_fn(y_true, y_pred):
         [torch.float]: Accuracy valvue betwaeen y_true and y_pred, e.g 77.37
     """
 
-    correct = torch.eq(y_true, y_true).sum().item()
+    correct = torch.eq(y_true, y_pred).sum().item()
+    # torch.eq : Computes element-wise equality
     acc = (correct / len(y_pred)) * 100
     return acc
 
